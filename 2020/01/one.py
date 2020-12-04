@@ -1,11 +1,21 @@
+#!/usr/bin/python
 import sys
-from help import readInput
+
+def readInput(filename):
+    path = filename
+    f = open(path, "r")
+    lines = f.readlines()
+    f.close()
+    converted_list = []
+    for line in lines:
+        converted_list.append(int(line.strip()))
+    return converted_list
 
 def one(part):
     # print command line arguments
     print ("This is one")
     # get input
-    filename = "1." + part + ".txt"
+    filename = part + ".txt"
     input = readInput(filename)
     # print (input)
     for a in input:
@@ -15,13 +25,11 @@ def one(part):
                 print (a * b)
                 return
 
-
-
 def two(part):
     # print command line arguments
     print ("This is one")
     # get input
-    filename = "1." + part + ".txt"
+    filename = part + ".txt"
     input = readInput(filename)
     # print (input)
     for a in input:
@@ -33,9 +41,26 @@ def two(part):
                     return
 
 def entry(part):
-    if part == "1" or part == "example1":
+    if part == "1" or part == "example":
         one(part)
-    elif part == "2" or part == "example2":
+    elif part == "2" or part == "example":
         two(part)
     else:
         print ("unknown part")
+
+def main():
+    # print command line arguments
+    for arg in sys.argv[1:]:
+        print arg
+    if sys.argv[1] == "1":
+        one(sys.argv[2])
+    elif sys.argv[1] == "2":
+        two(sys.argv[2])
+    else:
+        print ("Unknown input: {}").format(sys.argv[1])
+    
+
+if __name__ == "__main__":
+    main()
+
+
