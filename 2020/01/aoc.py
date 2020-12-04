@@ -40,14 +40,6 @@ def two(part):
                     print (a * b * c)
                     return
 
-def entry(part):
-    if part == "1" or part == "example":
-        one(part)
-    elif part == "2" or part == "example":
-        two(part)
-    else:
-        print ("unknown part")
-
 def main():
     # print command line arguments
     for arg in sys.argv[1:]:
