@@ -168,3 +168,9 @@ hs_err_pid*
 replay_pid*
 
 .DS_Store
+
+
+## Java 2022 IntelliJ
+2022/.idea/*
+2022/out
+2022/.*iml
