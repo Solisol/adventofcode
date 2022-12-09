@@ -173,4 +173,4 @@ replay_pid*
 ## Java 2022 IntelliJ
 2022/.idea/*
 2022/out
-2022/.*iml
+2022/*.iml
